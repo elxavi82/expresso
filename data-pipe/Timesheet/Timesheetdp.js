@@ -13,7 +13,7 @@ Timesheetdp.getAllTimesheets = () =>{
     });
 };
 
-Timesheetdp.getTimsheetById = id =>{
+Timesheetdp.getTimesheetById = id =>{
     return new Promise(async(resolve, reject) =>{
         try{
             const timesheet = await timesheetdb.getTimesheetById(id);
@@ -43,7 +43,7 @@ Timesheetdp.addTimesheet = timesheet =>{
             const date = Number(timesheet.date);
             const employeeId = Number(timesheet.employeeId);
 
-            if(!name || !rate || !date || !employeeId){
+            if(!hours || !rate || !date || !employeeId){
                 resolve('data-incomplete');
             }else{
                 const newTimesheetId = await timesheetdb.addTimesheet(timesheet);
@@ -65,7 +65,7 @@ Timesheetdp.updateTimesheet = timesheet =>{
             const date = Number(timesheet.date);
             const employeeId = Number(timesheet.employeeId);
 
-            if(!id || !name || !rate || !date || !employeeId){
+            if(!id || !hours || !rate || !date || !employeeId){
                 resolve('data-incomplete');
             }else{
                 const updatedTimesheet = await timesheetdb.updateTimesheet(timesheet);

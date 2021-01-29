@@ -56,7 +56,7 @@ Employeedp.updateEmployee = employee =>{
             if(!id || !name || !position || !wage){
                 resolve('data-incomplete');
             }else{
-                const updatedEmployee = await employeedb.addEmployee(employee);
+                const updatedEmployee = await employeedb.updateEmployee(employee);
                 resolve(updatedEmployee);
             }
         }catch(error){
