@@ -38,6 +38,7 @@ MenuItemdp.getMenuItemByMenuId = menuId => {
 MenuItemdp.addMenuItem = menuItem => {
     return new Promise(async(resolve, reject) => {
         try{
+            console.log(menuItem);
             const name = menuItem.name;
             const description = menuItem.description;
             const inventory = Number(menuItem.inventory);
